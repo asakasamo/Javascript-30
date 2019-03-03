@@ -64,11 +64,12 @@
 
             console.log(audio);
 
-            // stop the functioning from running at all
+            // stop the functioning from running at all if no audio found
             if (!audio) {
                return;
             }
 
+            audio.currentTime = 0; // rewind audio to the start
             audio.play();
          });
       </script>
