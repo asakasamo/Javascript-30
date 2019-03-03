@@ -27,6 +27,10 @@
       <script type="module">
          import DrumData from "./DrumData.js";
 
+         /**
+          * Function definitions
+          */
+
          function importDrumData() {
             const keysDiv = document.querySelector("#keys");
 
@@ -78,6 +82,10 @@
             if (event.propertyName !== "transform") return; // skip it if it's not a transform
             this.classList.remove("playing");
          }
+
+         /**
+          * Functional code
+          */
 
          importDrumData();
 
