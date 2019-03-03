@@ -3,4 +3,4 @@ We're going to build a javascript "drum kit" which listens for key presses and p
 - Data attributes (<a data-x="whatever") are custom HTML attributes. They were added to HTML as a result of 
 developers adding their own attributes for ease of programming use.
 
-- 
+- CSS transitions and animations fire an "end" event that can be used in your Javascript.

@@ -57,7 +57,7 @@
       <audio data-key="76" src="sounds/tink.wav"></audio>
 
       <script>
-         window.addEventListener("keydown", function(e) {
+         function playSound(e) {
             const audio = document.querySelector(
                `audio[data-key="${e.keyCode}"`
             );
@@ -76,7 +76,9 @@
             audio.play();
 
             keyDiv.classList.add("playing");
-         });
+         }
+
+         window.addEventListener("keydown", playSound);
 
          function removeTransition(e) {
             if (e.propertyName !== "transform") return; // skip it if it's not a transform
