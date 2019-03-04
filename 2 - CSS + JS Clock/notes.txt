@@ -8,3 +8,5 @@ spins in place), which we don't want
 
 - Since it starts out pointing towards 9:00, we use a 90deg rotation to set the correct default
 orientation
+
+- We use the transition-timing-function property to create the realistic ticking animation
