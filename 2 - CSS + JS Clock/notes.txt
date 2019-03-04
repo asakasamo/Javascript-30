@@ -1,0 +1,10 @@
+We're making an analog clock in CSS, which has a realistic animation for the hands moving.
+
+- We'll be using the CSS Transform property to rotate the hands.
+
+- The issue with CSS rotation is that the origin is the center of the element it's rotating (it 
+spins in place), which we don't want
+   - Thus we'll be using transform-origin to change the origin (transform-origin: 100%)
+
+- Since it starts out pointing towards 9:00, we use a 90deg rotation to set the correct default
+orientation
