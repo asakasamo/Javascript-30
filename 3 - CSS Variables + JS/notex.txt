@@ -1,0 +1,4 @@
+We're making a page that lets you use inputs to mess with CSS variables
+
+- CSS Variables are relatively new, and allow you to update them within Javascript
+

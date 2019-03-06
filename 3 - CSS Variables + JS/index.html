@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Scoped CSS Variables and JS</title>
+   </head>
+   <body>
+      <h2>Update CSS Variables with <span class="hl">JS</span></h2>
+
+      <div class="controls">
+         <label for="pads">Padding:</label>
+         <input
+            id="pads"
+            type="range"
+            name="pads"
+            min="10"
+            max="200"
+            value="10"
+            data-sizing="px"
+         />
+
+         <label for="blur">Blur:</label>
+         <input
+            id="blur"
+            type="range"
+            name="blur"
+            min="0"
+            max="25"
+            value="0"
+            data-sizing="px"
+         />
+
+         <label for="base">Base Color</label>
+         <input id="base" type="color" name="base" value="#ffc600" />
+
+         <br />
+
+         <h3>Background:</h3>
+
+         <label for="bgR">Red</label>
+         <input
+            type="range"
+            id="bgR"
+            name="bgR"
+            min="0"
+            max="255"
+            value="100"
+         />
+
+         <label for="bgG">Green</label>
+         <input
+            type="range"
+            id="bgG"
+            name="bgG"
+            min="0"
+            max="255"
+            value="144"
+         />
+
+         <label for="bgB">Blue</label>
+         <input
+            type="range"
+            id="bgB"
+            name="bgB"
+            min="0"
+            max="255"
+            value="255"
+         />
+      </div>
+
+      <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500" />
+
+      <style>
+         :root {
+            --base: #ffc600;
+            --pads: 10px;
+            --blur: 0;
+            --bgR: 100;
+            --bgG: 144;
+            --bgB: 255;
+         }
+
+         img {
+            padding: var(--pads);
+            background: var(--base);
+            filter: blur(var(--blur));
+         }
+
+         .h1 {
+            color: var(--base);
+         }
+
+         /*
+            misc styles, nothing to do with CSS variables
+         */
+
+         body {
+            background-color: rgb(var(--bgR), var(--bgG), var(--bgB));
+            text-align: center;
+            color: white;
+            font-family: "helvetica neue", sans-serif;
+            font-weight: 100;
+            font-size: 20px;
+         }
+
+         .controls {
+            margin-bottom: 50px;
+         }
+
+         input {
+            width: 100px;
+         }
+      </style>
+
+      <script>
+         function handleUpdate() {
+            // grab the suffix from the dataset
+            const suffix = this.dataset.sizing || "";
+            document.documentElement.style.setProperty(
+               `--${this.name}`,
+               this.value + suffix
+            );
+         }
+
+         const inputs = document.querySelectorAll(".controls input");
+
+         inputs.forEach((input) => {
+            input.addEventListener("change", handleUpdate);
+            input.addEventListener("mousemove", handleUpdate);
+         });
+      </script>
+   </body>
+</html>
