@@ -52,8 +52,10 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+         }
 
-            /* align-items: center; */
+         .panel:hover {
+            cursor: pointer;
          }
 
          .panel1 {
@@ -76,7 +78,6 @@
             margin: 0;
             width: 100%;
             transition: transform 0.5s;
-            border: 1px solid red;
             flex: 1 0 auto;
             display: flex;
             justify-content: center;
@@ -142,6 +143,23 @@
          </div>
       </div>
 
-      <script></script>
+      <script>
+         const panels = document.querySelectorAll(".panel");
+
+         function toggleOpen() {
+            this.classList.toggle("open");
+         }
+
+         function toggleActive(event) {
+            if (event.propertyName.includes("flex")) {
+               this.classList.toggle("open-active");
+            }
+         }
+
+         panels.forEach((panel) => {
+            panel.addEventListener("click", toggleOpen);
+            panel.addEventListener("transitionend", toggleActive);
+         });
+      </script>
    </body>
 </html>
