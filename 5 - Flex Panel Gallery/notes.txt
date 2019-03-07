@@ -1,0 +1,1 @@
+We're making a "flex gallery" - an animated gallery of image using flexbox
