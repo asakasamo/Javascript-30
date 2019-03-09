@@ -1,0 +1,4 @@
+We're creating a "Type-Ahead" input box that will show us the results of a city we search as we type it in 
+(and also display the population of that city)
+
+- The data endpoint is a JSON file from Github
