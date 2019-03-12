@@ -6,7 +6,34 @@
    </head>
    <body>
       <canvas id="draw" width="800" height="800"></canvas>
-      <script></script>
+      <script>
+         const canvas = document.querySelector("#draw");
+         const context = canvas.getContext("2d");
+
+         canvas.width = window.innerWidth;
+         canvas.height = window.innerHeight;
+
+         context.strokeStyle = "#BADA55";
+         context.lineJoin = "round";
+         context.lineCap = "round";
+
+         let isDrawing = false;
+
+         let lastX = 0,
+            lastY = 0;
+
+         function draw(event) {
+            // stop the function from running when not mousedown
+            if (!isDrawing) return;
+
+            console.log(event);
+         }
+
+         canvas.addEventListener("mousemove", draw);
+         canvas.addEventListener("mousedown", () => (isDrawing = true));
+         canvas.addEventListener("mouseup", () => (isDrawing = false));
+         canvas.addEventListener("mouseout", () => (isDrawing = false));
+      </script>
 
       <style>
          html,

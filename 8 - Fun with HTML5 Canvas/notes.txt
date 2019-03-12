@@ -1,2 +1,3 @@
 We're making a colorful drawing pad with HTML5 canvas
 
+- You don't draw on the canvas directly - you draw on the context (which can be 2D or 3D)
