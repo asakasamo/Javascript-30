@@ -1,0 +1,2 @@
+We're making a colorful drawing pad with HTML5 canvas
+
