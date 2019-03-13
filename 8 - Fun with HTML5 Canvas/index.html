@@ -12,10 +12,10 @@
 
          canvas.width = window.innerWidth;
          canvas.height = window.innerHeight;
-
          context.strokeStyle = "#BADA55";
          context.lineJoin = "round";
          context.lineCap = "round";
+         context.lineWidth = 100;
 
          let isDrawing = false;
 
@@ -26,11 +26,21 @@
             // stop the function from running when not mousedown
             if (!isDrawing) return;
 
-            console.log(event);
+            context.beginPath();
+            // start from...
+            context.moveTo(lastX, lastY);
+            // go to...
+            context.lineTo(event.offsetX, event.offsetY);
+            context.stroke();
+
+            [lastX, lastY] = [event.offsetX, event.offsetY];
          }
 
+         canvas.addEventListener("mousedown", () => {
+            isDrawing = true;
+            [lastX, lastY] = [event.offsetX, event.offsetY];
+         });
          canvas.addEventListener("mousemove", draw);
-         canvas.addEventListener("mousedown", () => (isDrawing = true));
          canvas.addEventListener("mouseup", () => (isDrawing = false));
          canvas.addEventListener("mouseout", () => (isDrawing = false));
       </script>
