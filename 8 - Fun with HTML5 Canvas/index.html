@@ -10,17 +10,28 @@
          const canvas = document.querySelector("#draw");
          const context = canvas.getContext("2d");
 
+         /** Canvas settings **/
          canvas.width = window.innerWidth;
          canvas.height = window.innerHeight;
-         context.strokeStyle = "#BADA55";
          context.lineJoin = "round";
          context.lineCap = "round";
-         context.lineWidth = 100;
+         context.lineWidth = 10;
+         context.strokeStyle = `hsl(0, 100%, 50%)`;
 
+         /** Functional logic **/
          let isDrawing = false;
 
          let lastX = 0,
             lastY = 0;
+
+         let hue = 0;
+         function updateHue() {
+            hue++;
+            if (hue >= 360) {
+               hue = 0;
+            }
+            context.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+         }
 
          function draw(event) {
             // stop the function from running when not mousedown
@@ -34,6 +45,7 @@
             context.stroke();
 
             [lastX, lastY] = [event.offsetX, event.offsetY];
+            updateHue();
          }
 
          canvas.addEventListener("mousedown", () => {
