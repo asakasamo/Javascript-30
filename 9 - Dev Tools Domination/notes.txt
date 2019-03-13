@@ -1,0 +1,41 @@
+We're going through a few must-know Dev Tools tricks
+
+1. If you want to watch where a DOM node's (CSS) attributes get modified, you can:
+   - Inspect element, then
+   - Right click the element > Break on > Attribute modifications
+
+2. When doing console.log, you can interpolate values into the output
+   - console.log("I am a %s string", "interpolated");
+   - Or you can just use ES6 backticks
+
+3. You can style console output with %c
+   - console.log("%c I am some styled string, "font-size: 20px")
+
+4. You can output warnings with console.warn
+
+5. You can error with console.error
+
+6. You can display "fun fact" info with console.info
+   - UPDATE: No longer shows visuals; is identical to console.log
+
+7. For testing, you can use console.assert
+   - console.assert(bool, "This displays if the assertion is wrong");
+
+8. You can clear the console with console.clear()
+
+9. You can view a DOM element's complete attributes with console.dir
+
+10. For organized output, you can use console.group() (or console.groupCollapsed()) and console.groupEnd() to group outputs
+
+11. To count how many times a specific output has been made, you can use console.count(item)
+   - E.g. 
+         console.count("Wes");
+         console.count("Wes");
+         console.count("Bob");
+         console.count("Wes");
+         console.count("Bob");
+
+12. To log how long something took to happen, you can use console.time() and console.timeEnd()
+   - You must use the same string you passed into console.time() on console.timeEnd()
+
+13. Use console.table to print objects in a table
