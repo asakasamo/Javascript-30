@@ -1,0 +1,3 @@
+The exercise name is self-explanatory
+
+- You can use event.shiftKey to check if the shift key is held down

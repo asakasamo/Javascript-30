@@ -109,7 +109,7 @@
             return checkboxes.indexOf(checkbox);
          }
 
-         function toggleCheckbox(event) {
+         function handleCheck(event) {
             if (!shiftHeldDown || lastClickedIndex === -1) {
                lastClickedIndex = getCheckboxIndex(this);
                return;
@@ -130,7 +130,7 @@
          /** Functional code **/
 
          checkboxes.forEach((checkbox) => {
-            checkbox.addEventListener("click", toggleCheckbox);
+            checkbox.addEventListener("click", handleCheck);
          });
 
          window.addEventListener("keydown", (event) => {
