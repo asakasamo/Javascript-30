@@ -94,6 +94,22 @@
          </div>
       </div>
 
-      <script></script>
+      <script>
+         let shiftHeldDown = false;
+
+         window.addEventListener("keydown", (event) => {
+            if (event.keyCode === 16) {
+               shiftHeldDown = true;
+               console.log("Shift held down!");
+            }
+         });
+
+         window.addEventListener("keyup", (event) => {
+            if (event.keyCode === 16) {
+               shiftHeldDown = false;
+               console.log("Shift released!");
+            }
+         });
+      </script>
    </body>
 </html>
