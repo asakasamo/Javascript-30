@@ -1,3 +1,5 @@
 We're building a custom HTML5 video player
 
 - We're hiding the default HTML5 controls and replacing them with custom styled HTML5 inputs
+
+- For the progress scrub, we use the offsetX of the mouse event to calculate what position to skip the progress to in the video
