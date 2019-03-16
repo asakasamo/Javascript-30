@@ -1,0 +1,3 @@
+We're building a custom HTML5 video player
+
+- We're hiding the default HTML5 controls and replacing them with custom styled HTML5 inputs
