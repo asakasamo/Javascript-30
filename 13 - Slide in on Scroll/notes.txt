@@ -1,0 +1,1 @@
+We're going to create the annoying "slide-in on scroll" effect used on websites
