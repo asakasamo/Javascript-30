@@ -1,1 +1,4 @@
 We're going to create the annoying "slide-in on scroll" effect used on websites
+
+- A debouncing function is used to make sure that a specific function (e.g. an action listener) only runs once every
+x unit of time
