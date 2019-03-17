@@ -9,6 +9,24 @@
       ></script>
    </head>
    <body>
-      <script></script>
+      <script>
+         const secretCode = "al-john";
+         const pressedKeys = [];
+
+         window.addEventListener("keyup", (event) => {
+            console.log(event.key);
+            pressedKeys.push(event.key);
+            pressedKeys.splice(
+               -secretCode.length - 1, // -8
+               pressedKeys.length - secretCode.length //
+            );
+
+            console.log(pressedKeys);
+            if (pressedKeys.join("") === secretCode) {
+               console.log("DING DING DING!");
+               cornify_add();
+            }
+         });
+      </script>
    </body>
 </html>

@@ -1,0 +1,4 @@
+Self-explanatory title; we're going to detect the Konami Code
+
+- If you pass a negative number into splice(), it starts from the end of the array and counts backwards
+   - -1 is the last item in the array
