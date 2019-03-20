@@ -89,8 +89,20 @@
                .join("");
          }
 
+         function toggleDone(event) {
+            if (!event.target.matches("input")) return;
+
+            const element = event.target;
+            const index = element.dataset.index; // get the index of the item
+            items[index].done = !items[index].done;
+
+            localStorage.setItem("items", JSON.stringify(items));
+            populateList(items, itemsList);
+         }
+
          populateList(items, itemsList);
          addItems.addEventListener("submit", addItem);
+         itemsList.addEventListener("click", toggleDone);
       </script>
    </body>
 </html>

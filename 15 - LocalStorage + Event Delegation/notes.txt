@@ -1,3 +1,11 @@
 We're going to be persisting our application state with localstorage
 
 - Forms have a reset() function
+
+- Localstorage is simple - it's a global object that stores key-value pairs of strings (and only strings)
+   - Main functions: localStorage.addItem(), localStorage.removeItem, localStorage.clear()
+
+- Event delegation is making a parent object handle events and passing them to children rather than having 
+   the children handle them
+
+- For events, event.target.matches("input") can be used to filter out specifically input nodes
