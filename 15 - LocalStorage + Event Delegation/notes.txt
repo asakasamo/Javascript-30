@@ -1,0 +1,3 @@
+We're going to be persisting our application state with localstorage
+
+- Forms have a reset() function
