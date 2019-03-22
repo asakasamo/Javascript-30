@@ -58,22 +58,15 @@
             "An Old Dog"
          ];
 
-         function compare(name1, name2) {
-            const articles = ["The ", "An ", "A "];
-
-            for (let article of articles) {
-               if (name1.indexOf(article) === 0) {
-                  name1 = name1.split(article)[1];
-               }
-               if (name2.indexOf(article) === 0) {
-                  name2 = name2.split(article)[1];
-               }
-            }
-
-            return name1.trim().localeCompare(name2.trim());
+         function removeArticles(str) {
+            return str.replace(/^(a |the |an )/i, "").trim();
          }
 
-         bands.sort(compare);
+         function compareWithoutArticles(name1, name2) {
+            return removeArticles(name1).localeCompare(removeArticles(name2));
+         }
+
+         bands.sort(compareWithoutArticles);
 
          console.log(bands);
 
