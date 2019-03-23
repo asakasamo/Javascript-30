@@ -177,10 +177,36 @@
          <li data-time="1:56">
             Video 57
          </li>
-         <li data-time="4:04">
+         <li data-time="4:06">
             Video 58
          </li>
       </ul>
-      <script></script>
+      <script>
+         const timeNodes = [...document.querySelectorAll("[data-time]")];
+
+         const totalSeconds = timeNodes
+            .map((node) => node.dataset.time)
+            .map((timeCode) => {
+               const [mins, secs] = timeCode.split(":").map(parseFloat);
+               return mins * 60 + secs;
+            })
+            .reduce((total, vidSecs) => total + vidSecs);
+
+         let secondsLeft = totalSeconds;
+         const hours = Math.floor(secondsLeft / 3600);
+         secondsLeft = totalSeconds % 3600;
+         const mins = Math.floor(secondsLeft / 60);
+         secondsLeft = totalSeconds % 60;
+         const secs = secondsLeft;
+
+         function padZero(num) {
+            if (num < 10) {
+               return "0" + num;
+            }
+            return num;
+         }
+
+         console.log(`Total: ${hours}:${padZero(mins)}:${padZero(secs)}`);
+      </script>
    </body>
 </html>
