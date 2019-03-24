@@ -3,6 +3,10 @@
    <head>
       <meta charset="UTF-8" />
       <title>Speech Detection</title>
+      <script
+         type="text/javascript"
+         src="http://www.cornify.com/js/cornify.js"
+      ></script>
    </head>
    <body>
       <div class="words" contenteditable></div>
@@ -10,6 +14,37 @@
       <script>
          window.SpeechRecognition =
             window.SpeechRecognition || window.webkitSpeechRecognition;
+
+         const recognition = new SpeechRecognition();
+         // gives results as you're speaking
+         recognition.interimResults = true;
+
+         let p = document.createElement("p");
+         const words = document.querySelector(".words");
+         words.appendChild(p);
+
+         recognition.addEventListener("result", (event) => {
+            const transcript = Array.from(event.results)
+               .map((result) => result[0])
+               .map((result) => result.transcript)
+               .join("");
+
+            p.textContent = transcript;
+            if (event.results[0].isFinal) {
+               p = document.createElement("p");
+               words.appendChild(p);
+            }
+
+            if (transcript.includes("unicorn")) {
+               cornify_add();
+            }
+
+            console.log(transcript);
+         });
+
+         recognition.addEventListener("end", recognition.start);
+
+         recognition.start();
       </script>
 
       <style>
