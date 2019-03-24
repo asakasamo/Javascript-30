@@ -1,0 +1,3 @@
+We're writing a speech recognition app
+
+- Speech recognition exists as a global object: window.SpeechRecognition
