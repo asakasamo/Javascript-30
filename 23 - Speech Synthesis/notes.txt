@@ -1,0 +1,1 @@
+- To pass a function with a parameter as an argument, use theFunction.bind(thisValue, arguments)
