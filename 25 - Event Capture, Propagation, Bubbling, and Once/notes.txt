@@ -1,0 +1,7 @@
+Events fire in this order: capture, then bubble
+
+Capture is when an event is caught by the top level parent; capture goes from the top down.
+
+Bubbling is when the event actually fires, and it goes from the bottom up
+
+To make events trigger on capture, pass {capture: true} as the options to the event listener
