@@ -1,0 +1,1 @@
+- To animate from width = 0 to width = auto, set the max-width to something higher than the element will need
