@@ -1,0 +1,4 @@
+Sometimes setInterval doesn't run while the window isn't focused, or it pauses while scrolling
+- Our solution is to store the starting and ending time upfront, so whenever the interval works it's just
+updating the current time relative to the ending time that was already initially set
+
