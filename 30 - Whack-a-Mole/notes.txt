@@ -1,0 +1,2 @@
+- Every mouse click event has an "isTrusted" attribute that indicates whether or not the event is
+trusted as a real event rather than a simulated one
